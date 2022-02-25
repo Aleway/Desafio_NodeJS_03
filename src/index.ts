@@ -36,8 +36,38 @@ app.use(express.json());
 app.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`);
 
-
+	
 	// CÓDIGO PARA ATENDER OS REQUERIMENTOS
 	// R01, R02, R03, R04, R05
+
+	console.log("");
+	console.log(`Desafio 3`);
+	console.log(" ");
 	
+	const entrada = require("prompt-sync")({sigint:true});
+	var quant: number = 0;
+	var aluno: string = "";
+	var notaMaxima: number = 0.0;
+	
+	quant = (entrada(`Qual a Quantidade de Alunos?`));
+	console.log('');
+	
+
+	for(var i = 1; i <= quant; i++) {
+		
+	var nome = entrada(`Qual o nome do ${i}º Aluno: `);
+	var nota = parseFloat(entrada(`Qual o nota do Aluno ${nome}: `));
+
+    if (nota > notaMaxima) {
+       notaMaxima = nota;
+	   aluno = nome;
+	 }
+	}
+		
+	console.log(`Nome e Nota do Aluno(a) com a maior nota da classe é: ${aluno} com a Nota ${notaMaxima}`);	
 });
+
+
+
+
+
